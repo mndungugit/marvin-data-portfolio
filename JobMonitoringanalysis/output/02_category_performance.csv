@@ -1,0 +1,5 @@
+category,total_runs,failures,success_rate_%,avg_duration_sec
+Maintenance,496,57,88.5,286.7
+ETL,248,11,95.6,291.0
+Health,62,5,91.9,310.2
+Optimization,62,10,83.9,270.1

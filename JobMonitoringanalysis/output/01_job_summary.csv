@@ -1,0 +1,6 @@
+job_name,category,failure_count,avg_duration,avg_retries
+BackupDB_Production,Maintenance,17,69.5,0.8
+IndexMaintenance,Maintenance,15,59.9,1.0
+UpdateStatistics,Maintenance,14,68.9,0.9
+ArchiveOldRecords,Maintenance,11,67.4,1.1
+CacheRefresh,Optimization,10,75.4,0.6
