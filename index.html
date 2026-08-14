@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvin's Data Engineering Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .nav a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #764ba2;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .project-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .project-link:hover {
+            background: #764ba2;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-item h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .contact-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-section h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .contact-link:hover {
+            color: #764ba2;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📊 Marvin's Data Engineering Portfolio</h1>
+        <p class="subtitle"> Sr Database Developer → Data Engineer</p>
+        <div class="nav">
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="https://github.com/mndungugit/marvin-data-portfolio" target="_blank">GitHub</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Projects Section -->
+        <section class="section" id="projects">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <div class="projects">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3>🔍 Job Monitoring Analysis</h3>
+                    <p>
+                        PySpark pipeline analyzing 868 records of simulated SQL Server job history. 
+                        Identifies failure patterns, performance bottlenecks, and anomalies by job category, 
+                        time of day, and daily trends.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PySpark</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">Data Analysis</span>
+                    </div>
+                    <p><strong>Key Deliverables:</strong></p>
+                    <ul style="margin-left: 1rem; color: #666;">
+                        <li>Failure analysis (top failing jobs)</li>
+                        <li>Hourly failure pattern detection</li>
+                        <li>Daily performance trending</li>
+                        <li>CSV exports for reporting</li>
+                    </ul>
+                    <br>
+                    <a href="https://github.com/mndungugit/marvin-data-portfolio/tree/main/jobmonitoringanalysis" target="_blank" class="project-link">View Code</a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3>🚗 Vehicle Auction Profitability Analyzer</h3>
+                    <p>
+                        Pandas-based profitability analysis tool for vehicle auction purchases. 
+                        Analyzes 50 vehicles across 8 types and 4 condition levels, calculating ROI, 
+                        identifying best deals, and providing actionable insights for KO Towing auctions.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Analytics</span>
+                        <span class="tech-tag">ROI Analysis</span>
+                    </div>
+                    <p><strong>Key Deliverables:</strong></p>
+                    <ul style="margin-left: 1rem; color: #666;">
+                        <li>Best deals identification (ROI > 15%)</li>
+                        <li>Performance by vehicle type</li>
+                        <li>Performance by condition level</li>
+                        <li>Tesla Model Y deep dive</li>
+                    </ul>
+                    <br>
+                    <a href="https://github.com/mndungugit/marvin-data-portfolio/tree/main/vehicleauctionanalysis" target="_blank" class="project-link">View Code</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section" id="skills">
+            <h2 class="section-title">Core Skills</h2>
+            
+            <div class="skills">
+                <div class="skill-item">
+                    <h4>Database</h4>
+                    <p>SQL Server, T-SQL, Query Optimization</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Big Data</h4>
+                    <p>PySpark, Distributed Processing</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Python</h4>
+                    <p>pandas, NumPy, Data Wrangling</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Automation</h4>
+                    <p>PowerShell, SSIS, SQL Agent</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Data Tools</h4>
+                    <p>Redgate Tools, Git, Jupyter</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Learning Path</h4>
+                    <p>Azure Data Factory, Databricks</p>
+                </div>
+            </div>
+        </section>
+
+       
+
+    <footer>
+        <p>© 2026 Marvin's Data Engineering Portfolio | Built with Python, PySpark, and Git</p>
+    </footer>
+</body>
+</html>
