@@ -1,0 +1,5 @@
+condition,Count,Avg ROI %,Max ROI %,Min ROI %,Avg Recon Cost,Total Profit
+Excellent,11,59.82,95.31,21.77,340.94,87171.56
+Poor,16,26.38,65.23,-6.63,876.98,43645.6
+Good,7,26.15,58.23,6.74,310.52,25391.3
+Fair,16,25.55,78.46,-4.01,922.68,40493.35
