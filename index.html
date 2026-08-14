@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marvin's Data Engineering Portfolio</title>
+    <title>Marvin - Data Engineer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,313 +13,527 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-           background: linear-gradient(135deg, #87CEEB 0%, #4A90E2 100%);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             min-height: 100vh;
             color: #333;
+            overflow-x: hidden;
         }
 
-        header {
+        /* ============ NAVIGATION ============ */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
             background: rgba(255, 255, 255, 0.95);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 3rem;
-        }
-
-        h1 {
-            color: #667eea;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .subtitle {
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        .nav {
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
 
-        .nav a {
-            color: #667eea;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #5DADE2 0%, #2874A6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
             text-decoration: none;
+            color: #333;
             font-weight: 600;
             transition: color 0.3s;
         }
 
-        .nav a:hover {
-            color: #764ba2;
+        .nav-links a:hover {
+            color: #5DADE2;
         }
 
-        .container {
-            max-width: 1000px;
+        /* ============ HERO SECTION ============ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 2rem 2rem;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
 
-        .section {
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-weight: 800;
+        }
+
+        .hero-content h1 .highlight {
+            background: linear-gradient(135deg, #5DADE2 0%, #87CEEB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
             margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #5DADE2 0%, #2874A6 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(93, 173, 226, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(93, 173, 226, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #2874A6;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #5DADE2 0%, #87CEEB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-box {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-box-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-box h3 {
+            color: #2874A6;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-box p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* ============ PROJECTS SECTION ============ */
+        .projects {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .section-title {
-            color: white;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #1e3c72;
         }
 
-        .projects {
+        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
         }
 
         .project-card {
             background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border: 2px solid transparent;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(93, 173, 226, 0.3);
+            border-color: #5DADE2;
         }
 
-        .project-card h3 {
-            color: #667eea;
+        .project-header {
+            background: linear-gradient(135deg, #5DADE2 0%, #2874A6 100%);
+            padding: 2rem;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content h3 {
+            color: #1e3c72;
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
 
-        .project-card p {
+        .project-content p {
             color: #666;
             line-height: 1.6;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .tech-stack {
+        .tech-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .tech-tag {
-            background: #667eea;
-            color: white;
-            padding: 0.3rem 0.8rem;
+            background: #E3F2FD;
+            color: #2874A6;
+            padding: 0.4rem 0.9rem;
             border-radius: 20px;
             font-size: 0.85rem;
+            font-weight: 600;
         }
 
         .project-link {
             display: inline-block;
-            background: #667eea;
+            background: linear-gradient(135deg, #5DADE2 0%, #2874A6 100%);
             color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 5px;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
-            transition: background 0.3s;
+            transition: all 0.3s;
         }
 
         .project-link:hover {
-            background: #764ba2;
+            transform: translateX(5px);
+            box-shadow: 0 10px 20px rgba(93, 173, 226, 0.3);
         }
 
+        /* ============ SKILLS SECTION ============ */
         .skills {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
 
         .skill-item {
             background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
         }
 
-        .skill-item h4 {
-            color: #667eea;
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(93, 173, 226, 0.2);
+        }
+
+        .skill-name {
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 10px;
+            overflow: hidden;
             margin-bottom: 0.5rem;
         }
 
-        .skill-item p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .contact-section {
-            background: white;
-            padding: 2rem;
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(135deg, #5DADE2 0%, #2874A6 100%);
             border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            animation: fillBar 2s ease-out forwards;
         }
 
-        .contact-section h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
+        @keyframes fillBar {
+            from { width: 0; }
+            to { width: var(--width); }
         }
 
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-link {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .contact-link:hover {
-            color: #764ba2;
-        }
-
-        footer {
-            text-align: center;
-            color: white;
-            padding: 2rem;
-            margin-top: 3rem;
+        .skill-percent {
+            text-align: right;
+            color: #5DADE2;
+            font-weight: 700;
             font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
-            }
+        /* ============ FOOTER ============ */
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
 
-            .projects {
+        footer a {
+            color: #5DADE2;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .hero-container {
                 grid-template-columns: 1fr;
             }
 
-            .nav {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
                 flex-direction: column;
+            }
+
+            .nav-links {
                 gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>📊 Marvin's Data Engineering Portfolio</h1>
-        <p class="subtitle"> Sr Database Developer → Data Engineer</p>
-        <div class="nav">
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="https://github.com/mndungugit/marvin-data-portfolio" target="_blank">GitHub</a>
-        </div>
-    </header>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">💻 MARVIN</div>
+        <ul class="nav-links">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="https://github.com/mndungugit/marvin-data-portfolio" target="_blank">GitHub</a></li>
+        </ul>
+    </nav>
 
-    <div class="container">
-        <!-- Projects Section -->
-        <section class="section" id="projects">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Data Engineer.<br><span class="highlight">Problem Solver.</span><br>SQL Expert.</h1>
+                <p>Transitioning from SQL Server to modern data engineering. Building real-world projects with PySpark, Python, and cloud technologies.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">📥 Download Resume</a>
+                    <a href="https://github.com/mndungugit/marvin-data-portfolio" target="_blank" class="btn btn-secondary">View GitHub</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Live Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">Core Skills</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Committed</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-box">
+                    <div class="hero-box-icon">📊</div>
+                    <h3>Data Engineering</h3>
+                    <p>PySpark • Python • SQL<br>Analytics • ETL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="projects-container">
             <h2 class="section-title">Featured Projects</h2>
             
-            <div class="projects">
+            <div class="projects-grid">
                 <!-- Project 1 -->
                 <div class="project-card">
-                    <h3>🔍 Job Monitoring Analysis</h3>
-                    <p>
-                        PySpark pipeline analyzing 868 records of simulated SQL Server job history. 
-                        Identifies failure patterns, performance bottlenecks, and anomalies by job category, 
-                        time of day, and daily trends.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">PySpark</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">SQL</span>
-                        <span class="tech-tag">Data Analysis</span>
+                    <div class="project-header">🔍</div>
+                    <div class="project-content">
+                        <h3>Job Monitoring Analysis</h3>
+                        <p>PySpark pipeline analyzing 868 records of SQL Server job history. Identifies failure patterns, performance bottlenecks, and anomalies by job category and time of day.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">PySpark</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Data Analysis</span>
+                        </div>
+                        <a href="https://github.com/mndungugit/marvin-data-portfolio/tree/main/jobmonitoringanalysis" target="_blank" class="project-link">View Code →</a>
                     </div>
-                    <p><strong>Key Deliverables:</strong></p>
-                    <ul style="margin-left: 1rem; color: #666;">
-                        <li>Failure analysis (top failing jobs)</li>
-                        <li>Hourly failure pattern detection</li>
-                        <li>Daily performance trending</li>
-                        <li>CSV exports for reporting</li>
-                    </ul>
-                    <br>
-                    <a href="https://github.com/mndungugit/marvin-data-portfolio/tree/main/jobmonitoringanalysis" target="_blank" class="project-link">View Code</a>
                 </div>
 
                 <!-- Project 2 -->
                 <div class="project-card">
-                    <h3>🚗 Vehicle Auction Profitability Analyzer</h3>
-                    <p>
-                        Pandas-based profitability analysis tool for vehicle auction purchases. 
-                        Analyzes 50 vehicles across 8 types and 4 condition levels, calculating ROI, 
-                        identifying best deals, and providing actionable insights for KO Towing auctions.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Analytics</span>
-                        <span class="tech-tag">ROI Analysis</span>
+                    <div class="project-header">🚗</div>
+                    <div class="project-content">
+                        <h3>Vehicle Auction Analyzer</h3>
+                        <p>Pandas-based profitability analysis for vehicle auctions. Analyzes 50 vehicles across 8 types, calculates ROI, identifies best deals for KO Towing auctions.</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Analytics</span>
+                            <span class="tech-tag">ROI Analysis</span>
+                        </div>
+                        <a href="https://github.com/mndungugit/marvin-data-portfolio/tree/main/vehicleauctionanalysis" target="_blank" class="project-link">View Code →</a>
                     </div>
-                    <p><strong>Key Deliverables:</strong></p>
-                    <ul style="margin-left: 1rem; color: #666;">
-                        <li>Best deals identification (ROI > 15%)</li>
-                        <li>Performance by vehicle type</li>
-                        <li>Performance by condition level</li>
-                        <li>Tesla Model Y deep dive</li>
-                    </ul>
-                    <br>
-                    <a href="https://github.com/mndungugit/marvin-data-portfolio/tree/main/vehicleauctionanalysis" target="_blank" class="project-link">View Code</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Skills Section -->
-        <section class="section" id="skills">
-            <h2 class="section-title">Core Skills</h2>
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="skills-container">
+            <h2 class="section-title">Core Competencies</h2>
             
-            <div class="skills">
+            <div class="skills-grid">
                 <div class="skill-item">
-                    <h4>Database</h4>
-                    <p>SQL Server, T-SQL, Query Optimization</p>
+                    <div class="skill-name">PySpark</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--width: 85%;"></div>
+                    </div>
+                    <div class="skill-percent">85%</div>
                 </div>
-                <div class="skill-item">
-                    <h4>Big Data</h4>
-                    <p>PySpark, Distributed Processing</p>
-                </div>
-                <div class="skill-item">
-                    <h4>Python</h4>
-                    <p>pandas, NumPy, Data Wrangling</p>
-                </div>
-                <div class="skill-item">
-                    <h4>Automation</h4>
-                    <p>PowerShell, SSIS, SQL Agent</p>
-                </div>
-                <div class="skill-item">
-                    <h4>Data Tools</h4>
-                    <p>Redgate Tools, Git, Jupyter</p>
-                </div>
-                <div class="skill-item">
-                    <h4>Learning Path</h4>
-                    <p>Azure Data Factory, Databricks</p>
-                </div>
-            </div>
-        </section>
 
-       
+                <div class="skill-item">
+                    <div class="skill-name">SQL Server / T-SQL</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--width: 95%;"></div>
+                    </div>
+                    <div class="skill-percent">95%</div>
+                </div>
 
-    <footer>
-        <p>© 2026 Marvin's Data Engineering Portfolio | Built with Python, PySpark, and Git</p>
-    </footer>
-</body>
-</html>
+                <div class="skill-item">
+                    <div class="skill-name">Python</div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--width: 88%;"></div>
+                    </div>
+                    <div class="skill-percent">88%</div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-name">Pandas &
